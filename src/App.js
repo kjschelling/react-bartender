@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import Cocktail from './pages/Cocktail/Cocktail';
+import Cocktails from './pages/Cocktails/Cocktails';
+import {Switch, Route, Link} from 'react-router-dom';
+import NotFound from './pages/NotFound/NotFound';
+import InternalServerError from './pages/InternalServerError/InternalServerError';
+import Offline from './pages/Offline/Offline';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <nav>
+          <Link to='/'>Local Quarantine Bartender!</Link>
+        </nav>
       </header>
+      <main>
+        <Switch>
+          <Route exact path="/"/>
+        </Switch>
+      </main>
+
     </div>
   );
 }
