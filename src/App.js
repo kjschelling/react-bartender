@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <nav>
-          <Link style= {{textDecoration: 'none'}}to='/'>Local Quarantine Bartender!</Link>
+       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+          <Link className="navbar-brand" to='/'>Local Quarantine Bartender!</Link>
         </nav>
       </header>
       <main>
