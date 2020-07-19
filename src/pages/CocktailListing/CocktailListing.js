@@ -2,7 +2,6 @@
 import React, { Component} from 'react';
 
 import CocktailRow from '../../components/CocktailRow/CocktailRow';
-import CocktailsAPI from '../../services/CocktailsAPI';
 
 
 class Cocktails extends Component {
@@ -12,20 +11,7 @@ class Cocktails extends Component {
    }
 
    async componentDidMount () {
-    try {
-      const {data, errors} = await CocktailsAPI.index();
-      if (data) {
-        this.setState({cocktails: data});
-      }
-      else {
-        console.log("ERROR!");
-        console.log(errors);
-      }
-    }
-      catch {
-        console.log('connection offline');
-      }
-       
+    
    }
 
     render() {

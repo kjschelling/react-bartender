@@ -1,6 +1,6 @@
 import React from 'react';
 import Cocktail from './pages/Cocktail/Cocktail';
-import Cocktails from './pages/Cocktails/Cocktails';
+import CocktailListing from './pages/CocktailListing/CocktailListing';
 import {Switch, Route, Link} from 'react-router-dom';
 import NotFound from './pages/NotFound/NotFound';
 import InternalServerError from './pages/InteralServerError/InteralServerError';

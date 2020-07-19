@@ -2,7 +2,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-s
 const CocktailRow = ({idDrink, strDrink, strDrinkThumb}) => {
     return (
         <div className="col-md-3">
