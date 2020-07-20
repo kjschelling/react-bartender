@@ -21,7 +21,8 @@ const index = () => {
    
    const CocktailsDB = {
      index,
-     show
+     show,
+     apiKey
    };
    
    export default CocktailsDB;

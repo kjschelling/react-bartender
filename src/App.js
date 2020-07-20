@@ -9,33 +9,20 @@ import {Switch, Route, Link, Redirect} from 'react-router-dom';
 import './App.css';
 import CocktailRow from './components/CocktailRow/CocktailRow';
 
-function App() {
+const App = () => {
+
   return (
-   
-    //   <header className="App-header">
-    //    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-    //       <Link className="navbar-brand" to='/'>Local Quarantine Bartender!</Link>
-    //     </nav>
-    //   </header>
-    //   <main>
-    //     <Switch>
-    //       <Route exact path="/"/>
-    //       <Route />
-    //       <Route />
-    //     </Switch>
-    //   </main>
 
       <div className="App">
           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-          <Link className="navbar-brand" to='/'>Local Quarantine Bartender!</Link>
+          <Link to='/' className="navbar-brand" to='/'>Local Quarantine Bartender!</Link>
             {' '}
-            <Link to="/about">About</Link>
+            {/* <Link to="/faves">Faves</Link> */}
           </nav>
           <main>
             <Switch>
               <Route exact path="/" component={CocktailListing}
-                render={ routeProps => <CocktailRow 
-                cocktails={this.state.cocktails} {...routeProps}/>} >
+                render={ routeProps => <CocktailRow {...routeProps}/>} >
                   <Redirect to="/cocktails" />
               </Route>
 
@@ -46,6 +33,7 @@ function App() {
           </div>
        );
     }
+  
               
     export default App;
           

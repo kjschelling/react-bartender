@@ -1,23 +1,37 @@
 
 import React, { Component} from 'react';
 
-import CocktailDB from '../../services/CocktailsDB';
-
 import CocktailRow from '../../components/CocktailRow/CocktailRow';
+import CocktailsDB from '../../services/CocktailsDB';
 
 
-class Cocktails extends Component {
+class CocktailListing extends Component {
 
    state = {
-       cocktails: []
+       cocktails: [],
    }
 
-   async componentDidMount () {
+   
+  async componentDidMount() {
+    try {
+      const {data, errors} = await CocktailsDB.index();
+      if (data) {
+        console.log(data);
+        this.setState({cocktails: data});
+      }
+      else {
+        console.log("ERROR!");
+        console.log(errors);
+      }
+    }
+    catch {
+      console.log(' connection offline');
+    }
+  }
 
-   }
 
     render() {
-        const allCocktailRows = this.state.cocktails.map( c => <CocktailRow  key={c.idDrink} {...c} /> );
+        const allCocktailRows = this.state.cocktails.map( c => <CocktailRow cocktails={this.state.cocktails} key={c.idDrink} {...c} /> );
 
     return (
       <>
@@ -47,4 +61,4 @@ class Cocktails extends Component {
     }
 }
 
-export default Cocktails;
+export default CocktailListing;
