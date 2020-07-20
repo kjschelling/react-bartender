@@ -5,7 +5,7 @@ import CocktailRow from '../../components/CocktailRow/CocktailRow';
 import CocktailsDB from '../../services/CocktailsDB';
 
 
-class CocktailListing extends Component {
+class Cocktails extends Component {
 
    state = {
        cocktails: [],
@@ -61,4 +61,4 @@ class CocktailListing extends Component {
     }
 }
 
-export default CocktailListing;
+export default Cocktails;
