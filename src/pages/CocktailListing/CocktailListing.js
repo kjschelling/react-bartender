@@ -1,6 +1,8 @@
 
 import React, { Component} from 'react';
 
+import CocktailDB from '../../services/CocktailsDB';
+
 import CocktailRow from '../../components/CocktailRow/CocktailRow';
 
 
@@ -11,7 +13,7 @@ class Cocktails extends Component {
    }
 
    async componentDidMount () {
-    
+
    }
 
     render() {
