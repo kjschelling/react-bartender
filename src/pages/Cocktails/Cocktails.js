@@ -11,22 +11,28 @@ class Cocktails extends Component {
        drinks: [],
    }
 
-   
   async componentDidMount() {
-    try {
-      const {data, errors} = await CocktailsDB.index();
-      this.setState({drinks: data});
-      
+  
+      const data = await CocktailsDB.index();
+      this.setState({drinks: data.drinks});
     }
-      
-    catch {
-      console.log(' connection offline');
-    }
-  }
+  
+  //     if (data) {
+  //       this.setState({drinks: data})
+  //     }
+  //       else {
+  //         console.log("ERROR!");
+  //         console.log(errors);
+  //       }
+  //   }
+  //   catch {
+  //     console.log(' connection offline');
+  //   }
+  // }
 
 
     render() {
-        const allCocktailRows = this.state.drinks.map( c => <CocktailRow key={c.idDrink} {...c} /> );
+        const allCocktailRows = this.state.drinks.map( d => <CocktailRow key={d.idDrink} {...d} /> );
 
     return (
       <>
@@ -35,12 +41,11 @@ class Cocktails extends Component {
             <h1 className="display-4">Cocktails</h1>
           </div>
         </section>
-
         { this.state.drinks.length ? 
           <div className="album">
             <div className="container">
               <div className="row">
-                {allCocktailRows}
+               {allCocktailRows}
               </div>
             </div>
           </div>

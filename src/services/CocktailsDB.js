@@ -1,25 +1,22 @@
 
-const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+const apiKey = process.env.REACT_APP_COCKTAIL_API_KEY;
 const baseUrl = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/randomselection.php`
+const collectionUrl = baseUrl;
+const memberUrl = (idDrink) => `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${idDrink}`
 
 
-const handleAPIErrors = response => {
-    if (!response.ok) {
-        return response.json().then(data =>{
-          return {errors: data.error}
-        })
-      }
-      return response.json().then(data => ({data}));
-}
-
-// const reformatResponseData = response => {
-//     if (!response.data) return response;
+// const handleAPIErrors = response => {
+//     if (!response.ok) {
+//         return response.json().then(data =>{
+//           return {errors: data.error}
+//         })
+//       }
+//       return response.json().then(data => ({data}));
 // }
 
 const index = () => {
-    fetch(baseUrl)
-           .then( response => response.json() )
-           .then( data => this.state({ drinks: data.results }) );
+    return fetch(collectionUrl)
+    .then(response => response.json());
    }
    
    const show = (id) => {
