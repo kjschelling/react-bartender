@@ -4,7 +4,7 @@ import React from 'react';
 
 const CocktailRow = (props) => {
 
-  const imgSrc = `${props.strDrinkThumb} + "/preview"`;
+  const imgSrc = `${props.strDrinkThumb}/preview`;
 
     return (
         <div className="col-md-3">
@@ -12,7 +12,6 @@ const CocktailRow = (props) => {
             <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
             <div className="card-body">
               <h5 className="card-title">
-                Drinks
                 {props.strDrink}
               </h5>
               <h6 className="card-subtitle mb-2 text-muted">{props.idDrink}</h6>
