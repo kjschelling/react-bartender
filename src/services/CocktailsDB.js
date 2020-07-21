@@ -1,6 +1,6 @@
 
 const apiKey = process.env.REACT_APP_COCKTAIL_API_KEY;
-const baseUrl = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/randomselection.php`
+const baseUrl = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/popular.php`
 const collectionUrl = baseUrl;
 const memberUrl = (idDrink) => `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${idDrink}`
 

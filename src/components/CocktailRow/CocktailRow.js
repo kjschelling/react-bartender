@@ -9,7 +9,8 @@ const CocktailRow = (props) => {
     return (
         <div className="col-md-3">
           <div className="card mb-4 shadow-sm">
-            <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
+            <img className="card-img-top" src={imgSrc} alt='Cocktail Pic'
+            style= {{"padding":"15px" }} />
             <div className="card-body">
               <h5 className="card-title">
                 {props.strDrink}
