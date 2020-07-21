@@ -1,6 +1,7 @@
 import React from 'react';
 // import Cocktail from './pages/Cocktail/Cocktail';
 import Cocktails from './pages/Cocktails/Cocktails';
+import Cocktail from './pages/Cocktail/Cocktail';
 import {Switch, Route, Link, Redirect} from 'react-router-dom';
 // import NotFound from './pages/NotFound/NotFound';
 // import InternalServerError from './pages/InteralServerError/InteralServerError';
@@ -26,6 +27,9 @@ const App = () => {
                   <Redirect to="/cocktails" />
               </Route>
                 <Route path="/cocktails" component={Cocktails} />
+                <Route path="/cocktails/idDrink"
+                  render={ routeProps => <Cocktail {...routeProps} />}
+                />
                
              </Switch>
           </main>

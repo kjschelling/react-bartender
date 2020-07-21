@@ -19,13 +19,9 @@ const index = () => {
     .then(response => response.json());
    }
    
-   const show = (id) => {
-    //    id = this.props.cocktail.idDrink;
-    //    if (id !== this.cocktail.idDrink) {
-    //        fetch()
-    //            .then(response => response.json())
-    //            .then(data => this.setState({cocktail: data}));
-    //    }
+   const show = idDrink => {
+        return fetch(memberUrl(idDrink))
+        .then(response => response.json());
    }
    
    const CocktailsDB = {

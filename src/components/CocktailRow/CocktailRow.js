@@ -1,21 +1,22 @@
 
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const CocktailRow = (props) => {
 
-  const imgSrc = `${props.strDrinkThumb}/preview`;
+  const {strDrink, strDrinkThumb, idDrink} = props;
+
+  const imgSrc = `${strDrinkThumb}/preview`;
 
     return (
         <div className="col-md-3">
-          <div className="card mb-4 shadow-sm">
-            <img className="card-img-top" src={imgSrc} alt='Cocktail Pic'
-            style= {{"padding":"15px" }} />
+          <div className="card mb-4 shadow-sm" style= {{"padding":"15px" }}>
+          <h6 className="card-subtitle mb-2 text-muted">ID:{idDrink}</h6>
+            <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
             <div className="card-body">
               <h5 className="card-title">
-                {props.strDrink}
+              <Link to={`/cocktails/${idDrink}`}>{strDrink}</Link>
               </h5>
-              <h6 className="card-subtitle mb-2 text-muted">{props.idDrink}</h6>
             </div>
           </div>
         </div>

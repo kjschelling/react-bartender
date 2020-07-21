@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 
 import CocktailRow from '../../components/CocktailRow/CocktailRow';
 import CocktailsDB from '../../services/CocktailsDB';
-
+// import RandomCocktail from '../../components/RandomCocktail/RandomCocktail';
 
 class Cocktails extends Component {
 
@@ -33,6 +33,7 @@ class Cocktails extends Component {
 
     render() {
         const allCocktailRows = this.state.drinks.map( d => <CocktailRow key={d.idDrink} {...d} /> );
+        // const RandomCocktail = <RandomCocktail />;
 
     return (
       <>
@@ -41,6 +42,11 @@ class Cocktails extends Component {
             <h1 className="display-4">Cocktails</h1>
           </div>
         </section>
+        <div className="container" style={{"padding":"50px"}}>
+          <h3 className="display-6">Generate Random Cocktail</h3>
+          <button type="button" class="btn btn-info">Random Cocktail!</button>
+        </div>
+
         { this.state.drinks.length ? 
           <div className="album">
             <div className="container">
