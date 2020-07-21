@@ -1,5 +1,4 @@
 import React from 'react';
-// import Cocktail from './pages/Cocktail/Cocktail';
 import Cocktails from './pages/Cocktails/Cocktails';
 import Cocktail from './pages/Cocktail/Cocktail';
 import {Switch, Route, Link, Redirect} from 'react-router-dom';
@@ -9,6 +8,7 @@ import {Switch, Route, Link, Redirect} from 'react-router-dom';
 
 import './App.css';
 import CocktailRow from './components/CocktailRow/CocktailRow';
+import CocktailsDB from './services/CocktailsDB';
 
 const App = () => {
 
@@ -27,10 +27,8 @@ const App = () => {
                   <Redirect to="/cocktails" />
               </Route>
                 <Route path="/cocktails" component={Cocktails} />
-                <Route path="/cocktails/idDrink"
-                  render={ routeProps => <Cocktail {...routeProps} />}
-                />
-               
+                <Route path="/cocktails/:id" component={Cocktail} />
+              
              </Switch>
           </main>
           </div>

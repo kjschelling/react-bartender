@@ -1,6 +1,8 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import Cocktail from '../../pages/Cocktail/Cocktail';
+import CocktailsDB from '../../services/CocktailsDB';
 
 const CocktailRow = (props) => {
 

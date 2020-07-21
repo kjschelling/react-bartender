@@ -10,8 +10,8 @@ class Cocktail extends Component {
     }
 
     async componentDidMount() {
-        const data = await CocktailsDB.show(this.props.match.params.idDrink);
-        this.setState({drink: data.drink})
+        const data = await CocktailsDB.show(this.props.match.params.id);
+        console.log(data.drink);
       }
 
     render () {
