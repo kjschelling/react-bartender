@@ -2,17 +2,13 @@
 const apiKey = process.env.REACT_APP_COCKTAIL_API_KEY;
 const baseUrl = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/popular.php`
 const collectionUrl = baseUrl;
-const memberUrl = (id) => `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${id}`
+const memberUrl = (id) => `https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${id}`;
+const randomShowUrl = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/random.php`;
 
 
-// const handleAPIErrors = response => {
-//     if (!response.ok) {
-//         return response.json().then(data =>{
-//           return {errors: data.error}
-//         })
-//       }
-//       return response.json().then(data => ({data}));
-// }
+const handleAPIErrors = response => {
+   
+}
 
 const index = () => {
     return fetch(collectionUrl)
@@ -24,10 +20,16 @@ const index = () => {
         .then(response => response.json());
    }
    
+   const randomShow = () => {
+        return fetch(randomShow)
+        .then(response => response.json());
+   }
+   
    const CocktailsDB = {
      index,
      show,
-     apiKey
+     apiKey, 
+     randomShow
    };
    
    export default CocktailsDB;

@@ -8,7 +8,8 @@ import {Switch, Route, Link, Redirect} from 'react-router-dom';
 
 import './App.css';
 import CocktailRow from './components/CocktailRow/CocktailRow';
-import CocktailsDB from './services/CocktailsDB';
+import RandomCocktail from './components/RandomCocktail/RandomCocktail';
+
 
 const App = () => {
 
@@ -22,13 +23,13 @@ const App = () => {
           </nav>
           <main>
             <Switch>
-              <Route exact path="/" component={Cocktails}
+              <Route exact path="/" component={Cocktails, RandomCocktail}
                 render={ routeProps => <CocktailRow {...routeProps}/>} >
                   <Redirect to="/cocktails" />
               </Route>
                 <Route path="/cocktails" component={Cocktails} />
-                <Route path="/cocktails/:id" component={Cocktail} />
-              
+                <Route path="/cocktails/:id" 
+                render={  routeProps => <Cocktail  {...routeProps} /> }/>
              </Switch>
           </main>
           </div>

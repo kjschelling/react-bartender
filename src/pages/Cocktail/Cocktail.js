@@ -9,15 +9,21 @@ class Cocktail extends Component {
         drink: {},
     }
 
+
     async componentDidMount() {
         const data = await CocktailsDB.show(this.props.match.params.id);
-        console.log(data.drink);
+        this.setState({drink: data.drinks});
       }
 
     render () {
 
-        const {idDrink, strDrink, strInstructions, strDrinkThumb, strCategory} = this.props;
+        const {idDrink, strDrink, strInstructions, strDrinkThumb, strCategory} = this.state.drink;
         const imgSrc = `${strDrinkThumb}/preview`;
+        // const IngredList = ({strIngredients}) => {
+        //     <ul>
+        //         {strIngredients.map((ingred, i) => <li key={i}>{ingred}</li>)}
+        //     </ul>
+        // }
 
         return (
             <>

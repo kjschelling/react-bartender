@@ -3,36 +3,37 @@ import React, { Component} from 'react';
 
 import CocktailRow from '../../components/CocktailRow/CocktailRow';
 import CocktailsDB from '../../services/CocktailsDB';
+import RandomCocktail from '../../components/RandomCocktail/RandomCocktail';
 // import RandomCocktail from '../../components/RandomCocktail/RandomCocktail';
 
 class Cocktails extends Component {
 
    state = {
        drinks: [],
+       random: {}
+   }
+
+   activateRandom = (e) => {
+    e.preventDefault();
+    console.log("Random Cocktail button clicked!");
+    
    }
 
   async componentDidMount() {
   
       const data = await CocktailsDB.index();
-      this.setState({drinks: data.drinks});
+       this.setState({drinks: data.drinks});
     }
+
+    // async componentDidMount() {
   
-  //     if (data) {
-  //       this.setState({drinks: data})
-  //     }
-  //       else {
-  //         console.log("ERROR!");
-  //         console.log(errors);
-  //       }
-  //   }
-  //   catch {
-  //     console.log(' connection offline');
-  //   }
-  // }
-
-
+    //   const data = await CocktailsDB.randomCocktail();
+    //    this.setState({random: data.drinks});
+    // }
+  
     render() {
-        const allCocktailRows = this.state.drinks.map( d => <CocktailRow key={d.idDrink} {...d} /> );
+        const allCocktailRows = this.state.drinks.map( d => <CocktailRow  key={d.idDrink} {...d} /> );
+      
         // const RandomCocktail = <RandomCocktail />;
 
     return (
@@ -44,7 +45,8 @@ class Cocktails extends Component {
         </section>
         <div className="container" style={{"padding":"50px"}}>
           <h3 className="display-6">Generate Random Cocktail</h3>
-          <button type="button" class="btn btn-info">Random Cocktail!</button>
+          
+          <button type="button" class="btn btn-info" onClick={this.activateRandom} >Random Cocktail!</button>
         </div>
 
         { this.state.drinks.length ? 
