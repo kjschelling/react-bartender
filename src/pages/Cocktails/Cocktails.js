@@ -8,22 +8,17 @@ import CocktailsDB from '../../services/CocktailsDB';
 class Cocktails extends Component {
 
    state = {
-       cocktails: [],
+       drinks: [],
    }
 
    
   async componentDidMount() {
     try {
       const {data, errors} = await CocktailsDB.index();
-      if (data) {
-        console.log(data);
-        this.setState({cocktails: data});
-      }
-      else {
-        console.log("ERROR!");
-        console.log(errors);
-      }
+      this.setState({drinks: data});
+      
     }
+      
     catch {
       console.log(' connection offline');
     }
@@ -31,7 +26,7 @@ class Cocktails extends Component {
 
 
     render() {
-        const allCocktailRows = this.state.cocktails.map( c => <CocktailRow cocktails={this.state.cocktails} key={c.idDrink} {...c} /> );
+        const allCocktailRows = this.state.drinks.map( c => <CocktailRow key={c.idDrink} {...c} /> );
 
     return (
       <>
@@ -41,7 +36,7 @@ class Cocktails extends Component {
           </div>
         </section>
 
-        { this.state.cocktails.length ? 
+        { this.state.drinks.length ? 
           <div className="album">
             <div className="container">
               <div className="row">

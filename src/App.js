@@ -1,6 +1,6 @@
 import React from 'react';
 // import Cocktail from './pages/Cocktail/Cocktail';
-import CocktailListing from './pages/CocktailListing/CocktailListing';
+import Cocktails from './pages/Cocktails/Cocktails';
 import {Switch, Route, Link, Redirect} from 'react-router-dom';
 // import NotFound from './pages/NotFound/NotFound';
 // import InternalServerError from './pages/InteralServerError/InteralServerError';
@@ -21,9 +21,9 @@ const App = () => {
           </nav>
           <main>
             <Switch>
-              <Route exact path="/" component={CocktailListing}
+              <Route exact path="/" component={Cocktails}
                 render={ routeProps => <CocktailRow {...routeProps}/>} >
-                  <Redirect to="/cocktails" />
+                  {/* <Redirect to="/cocktails" /> */}
               </Route>
 
                 {/* <Route path="/cocktails/:id" /> */}
