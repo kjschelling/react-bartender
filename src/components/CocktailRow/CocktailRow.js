@@ -15,7 +15,7 @@ const CocktailRow = ({strDrink, strDrinkThumb, idDrink, strCategory}) => {
             <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
             <div className="card-body">
               <h5 className="card-title">
-              <h6 className="card-subtitle mb-2 text-muted">Category:{strCategory}</h6>
+              <p style={{"fontSize": "15px"}} className="card-subtitle mb-2 text-muted">Category:{strCategory}</p>
                 <Link to={`/cocktails/${idDrink}`}>{strDrink}</Link>
               </h5>
             </div>

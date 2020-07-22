@@ -13,10 +13,12 @@ class Cocktails extends Component {
    state = {
        drinks: [],
        over21: true,
+       greetingActive: false,
    }
 
    handleClick = () => {
-     this.setState({over21 : false});
+     this.setState({over21 : false})
+     .then(this.setState({greetingActive : true}));
    }
 
   async componentDidMount() {
@@ -32,7 +34,7 @@ class Cocktails extends Component {
 
     return (
       <>
-      <Greeting handleClick={this.handleClick} />
+       { this.state.greetingActive ? <Greeting handleClick={this.handleClick} /> : null}
         <section className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 
@@ -41,7 +43,7 @@ class Cocktails extends Component {
           </div>
         </section>
 
-        { this.state.over21 === true ? <RandomCocktail /> : null }
+        { this.state.over21 ? <RandomCocktail /> : null }
 
         { this.state.drinks.length ? 
           <div className="album">
