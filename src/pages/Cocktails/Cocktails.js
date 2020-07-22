@@ -12,6 +12,7 @@ class Cocktails extends Component {
 
    state = {
        drinks: [],
+       over21: true,
    }
 
 
@@ -24,6 +25,7 @@ class Cocktails extends Component {
     render() {
 
         const allCocktailRows = this.state.drinks.map( d => <CocktailRow  key={d.idDrink} {...d} /> );
+        const over21Rows =  this.state.over21 == true ? allCocktailRows : null;
 
     return (
       <>
@@ -36,13 +38,14 @@ class Cocktails extends Component {
           </div>
         </section>
 
-        <RandomCocktail />
+
+        { this.state.over21 == true ? <RandomCocktail /> : null }
 
         { this.state.drinks.length ? 
           <div className="album">
             <div className="container">
               <div className="row">
-               {allCocktailRows}
+                   {over21Rows} 
               </div>
             </div>
           </div>

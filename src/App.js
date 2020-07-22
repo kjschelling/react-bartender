@@ -20,7 +20,6 @@ const App = () => {
           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
           <Link to='/' className="navbar-brand" to='/'>Local Quarantine Bartender!</Link>
             {' '}
-            {/* <Link to="/faves">Faves</Link> */}
           </nav>
           <main>
             <Switch>

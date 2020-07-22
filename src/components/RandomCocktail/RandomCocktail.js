@@ -26,7 +26,10 @@ class RandomCocktail extends Component {
 
     return (
         <div className='container' className={styles.randomDivWrapper}>
-            <h3 className={styles.randomH3}>Show Random Cocktail</h3>
+            <div className='jumbotron-fluid'>
+                <h3 className={styles.randomH3}>Show Random Cocktail</h3>
+            </div>
+            
         <div className="col-md-4"> 
           <div className="card mb-4 shadow-sm" 
           style= {{"padding":"20px"}}>
