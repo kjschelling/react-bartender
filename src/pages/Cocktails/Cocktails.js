@@ -23,17 +23,15 @@ class Cocktails extends Component {
   
     render() {
 
-
         const allCocktailRows = this.state.drinks.map( d => <CocktailRow  key={d.idDrink} {...d} /> );
-        
 
     return (
       <>
       <Greeting />
-        <section className="jumbotron">
+        <section className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 
-            className={styles.cocktailsH1}
+            className={styles.cocktailsH1} 
              >Cocktails</h1>
           </div>
         </section>

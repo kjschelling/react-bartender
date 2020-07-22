@@ -31,7 +31,7 @@ class RandomCocktail extends Component {
           <div className="card mb-4 shadow-sm" 
           style= {{"padding":"20px"}}>
               <h6 className="card-subtitle mb-2 text-muted" defaultValue="ID"> ID:{this.state.random.idDrink}</h6>
-            <img className="card-img-top" src={imgSrc}  alt='Cocktail Pic'
+            <img className="card-img-top" src={imgSrc} defaultValue="icon dice-6"  alt='Cocktail Pic'
             style= {{"padding":"15px" }} />
             <div className="card-body">
               <h5 className="card-title" defaultValue="Cocktail Name">
