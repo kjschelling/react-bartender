@@ -6,10 +6,6 @@ const memberUrl = (id) => `https://www.thecocktaildb.com/api/json/v2/${apiKey}/l
 const randomShowUrl = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/random.php`;
 
 
-const handleAPIErrors = response => {
-   
-}
-
 const index = () => {
     return fetch(collectionUrl)
     .then(response => response.json());

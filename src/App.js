@@ -18,26 +18,28 @@ const App = () => {
 
       <div className="App">
           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-          <Link to='/' className="navbar-brand" to='/'>Local Quarantine Bartender!</Link>
-            {' '}
+          <Link to='/' className="navbar-brand" to='/'> Quarantine Drink Inspiration</Link>
           </nav>
           <main>
             <Switch>
               
-              <Route exact path="/" component={Cocktails}
-                render={ routeProps => <CocktailRow {...routeProps}/>} >
-                  <Redirect to="/cocktails" />
-              </Route>
-              <Route exact path="/" component={RandomCocktail}>
-                  <Redirect to="/cocktails" />
-              </Route>
+              <Route exact path="/" component={Greeting}/>
+
+              <Route path="/cocktails" component={Cocktails} />
+              
+              <Route path="/cocktails" 
+                render={ routeProps => <RandomCocktail {...routeProps}/>}/>
+
+              <Route path="/cocktails" 
+                render={ routeProps => <CocktailRow {...routeProps}/>} />
+
+              
                 
-                
+          
                 <Route path="/cocktails/:id"
                 render={ routeProps => <Cocktail {...routeProps} />} 
                 />
-                <Route path="/cocktails" component={Cocktails} />
-                <Route path="/cocktails" component={Greeting} />
+              
                 
              </Switch>
           </main>

@@ -15,6 +15,9 @@ class Cocktails extends Component {
        over21: true,
    }
 
+   handleClick = () => {
+     this.setState({over21 : false});
+   }
 
   async componentDidMount() {
   
@@ -25,11 +28,11 @@ class Cocktails extends Component {
     render() {
 
         const allCocktailRows = this.state.drinks.map( d => <CocktailRow  key={d.idDrink} {...d} /> );
-        const over21Rows =  this.state.over21 == true ? allCocktailRows : null;
+        const over21Rows =  this.state.over21 === true ? allCocktailRows : null;
 
     return (
       <>
-      <Greeting />
+      <Greeting handleClick={this.handleClick} />
         <section className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 
@@ -38,8 +41,7 @@ class Cocktails extends Component {
           </div>
         </section>
 
-
-        { this.state.over21 == true ? <RandomCocktail /> : null }
+        { this.state.over21 === true ? <RandomCocktail /> : null }
 
         { this.state.drinks.length ? 
           <div className="album">
