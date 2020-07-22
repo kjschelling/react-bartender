@@ -12,13 +12,13 @@ class Cocktail extends Component {
 
     async componentDidMount() {
         const data = await CocktailsDB.show(this.props.match.params.id);
-        this.setState({drink: data.drinks});
+        this.setState({drink: data.drinks[0]});
       }
 
     render () {
 
-        const {idDrink, strDrink, strInstructions, strDrinkThumb, strCategory} = this.state.drink;
-        const imgSrc = `${strDrinkThumb}/preview`;
+        
+        const imgSrc = `${this.state.drink.strDrinkThumb}/preview`;
         // const IngredList = ({strIngredients}) => {
         //     <ul>
         //         {strIngredients.map((ingred, i) => <li key={i}>{ingred}</li>)}
@@ -29,15 +29,15 @@ class Cocktail extends Component {
             <>
              <div className="container">
                 <div className="m-5 card text-center">
-                <h6 className="card-subtitle mb-2 text-muted">{idDrink}</h6>
-                    <h3 className="card-header"> {strDrink}</h3>
+                <h6 className="card-subtitle mb-2 text-muted">{this.state.drink.idDrink}</h6>
+                    <h3 className="card-header"> {this.state.drink.strDrink}</h3>
                 <div className="card-body">
                     <img className="m-3" src={imgSrc} alt='Cocktail Pic' />
-                    <h5 className="card-title">{strDrink}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">Category: {strCategory}</h6>
-                    <p className="card-text">{strInstructions}</p>
+                    <h5 className="card-title">{this.state.drink.strDrink}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Category: {this.state.drink.strCategory}</h6>
+                    <p className="card-text">{this.state.drink.strInstructions}</p>
 
-                <Link className="btn btn-primary" to="/cocktails">Back</Link>
+                <Link className="btn btn-primary" to='/cocktails'>Back</Link>
         </div>
       </div>
     </div>

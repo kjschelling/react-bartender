@@ -1,12 +1,10 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Cocktail from '../../pages/Cocktail/Cocktail';
 
 
-const CocktailRow = (props) => {
 
-  const {strDrink, strDrinkThumb, idDrink} = props;
+const CocktailRow = ({strDrink, strDrinkThumb, idDrink}) => {
 
   const imgSrc = `${strDrinkThumb}/preview`;
 
@@ -17,7 +15,7 @@ const CocktailRow = (props) => {
             <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
             <div className="card-body">
               <h5 className="card-title">
-              <Link to={`/cocktails/${idDrink}`}>{strDrink}</Link>
+                <Link to={`/cocktails/${idDrink}`}>{strDrink}</Link>
               </h5>
             </div>
           </div>

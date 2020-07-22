@@ -30,9 +30,13 @@ const App = () => {
               <Route exact path="/" component={RandomCocktail}>
                   <Redirect to="/cocktails" />
               </Route>
+                
+                
+                <Route path="/cocktails/:id"
+                render={ routeProps => <Cocktail {...routeProps} />} 
+                />
                 <Route path="/cocktails" component={Cocktails} />
-                <Route path="/cocktails/:id" 
-                render={  routeProps => <Cocktail  {...routeProps} /> }/>
+            
              </Switch>
           </main>
           </div>

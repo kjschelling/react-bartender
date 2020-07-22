@@ -8,12 +8,6 @@ class RandomCocktail extends Component {
         random: {},
     }
 
-    // async componentDidMount() {
-  
-    //     const data = await CocktailsDB.randomShowUrl;
-    //      this.setState({drink: data.drinks});
-    //   }
-
     render () {
 
         let fetchRandomCockTail = () => {
