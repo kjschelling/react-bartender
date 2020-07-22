@@ -25,22 +25,24 @@ const App = () => {
               
               <Route exact path="/" component={Greeting}/>
 
+              <Route path="/cocktails/:id" component={Cocktail} />
+                <Route path="/cocktails/:id"
+                render={ routeProps => <Cocktail {...routeProps} />} 
+                />
+
+
               <Route path="/cocktails" component={Cocktails} />
               
               <Route path="/cocktails" 
                 render={ routeProps => <RandomCocktail {...routeProps}/>}/>
 
+                
+
               <Route path="/cocktails" 
                 render={ routeProps => <CocktailRow {...routeProps}/>} />
-
-              
-                
           
-                <Route path="/cocktails/:id"
-                render={ routeProps => <Cocktail {...routeProps} />} 
-                />
+               
               
-                
              </Switch>
           </main>
           </div>
