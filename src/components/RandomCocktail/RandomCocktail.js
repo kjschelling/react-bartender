@@ -5,21 +5,29 @@
 class RandomCocktail extends Component {
 
     state = {
-        random: [],
+        random: {},
     }
+
+    // async componentDidMount() {
+  
+    //     const data = await CocktailsDB.randomShowUrl;
+    //      this.setState({drink: data.drinks});
+    //   }
 
     render () {
 
-        const randomCockTail = () => {
-            let url = CocktailsDB.randomShowUrl;
+        let fetchRandomCockTail = () => {
+            const url = `https://www.thecocktaildb.com/api/json/v2/${CocktailsDB.apiKey}/random.php`;
             fetch(url)
 
             .then( (response) => { return response.json();
             })
             .then( (data) => {
-                this.setState({random: data.drinks} )
-            });
-        }
+                this.setState({random: data.drinks[0]});
+             });
+            }
+               
+
         const imgSrc = `${this.state.random.strDrinkThumb}/preview` ;
 
     return (
@@ -38,7 +46,7 @@ class RandomCocktail extends Component {
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-info" onClick={randomCockTail}>Random Cocktail!</button>
+        <button type="button" class="btn btn-info" onClick={fetchRandomCockTail}>Random Cocktail!</button>
         </div>
     );
     }

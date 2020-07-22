@@ -23,8 +23,11 @@ const App = () => {
           </nav>
           <main>
             <Switch>
-              <Route exact path="/" component={Cocktails, RandomCocktail}
+              <Route exact path="/" component={Cocktails}
                 render={ routeProps => <CocktailRow {...routeProps}/>} >
+                  <Redirect to="/cocktails" />
+              </Route>
+              <Route exact path="/" component={RandomCocktail}>
                   <Redirect to="/cocktails" />
               </Route>
                 <Route path="/cocktails" component={Cocktails} />

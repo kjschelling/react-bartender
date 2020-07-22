@@ -17,7 +17,7 @@ const CocktailRow = (props) => {
             <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
             <div className="card-body">
               <h5 className="card-title">
-              <Link componment={Cocktail} to={`/cocktails/${idDrink}`}>{strDrink}</Link>
+              <Link to={`/cocktails/${idDrink}`}>{strDrink}</Link>
               </h5>
             </div>
           </div>
