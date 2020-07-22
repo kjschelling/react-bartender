@@ -25,7 +25,7 @@ class Cocktail extends Component {
         return (
             <>
              <div className="container">
-                <div className="m-5 card text-center">
+                <div className="m-5 card text-center" style={{"padding":"20px"}}>
                 <h6 className="card-subtitle mb-2 text-muted">{this.state.drink.idDrink}</h6>
                     <h3 className="card-header"> {this.state.drink.strDrink}</h3>
                 <div className="card-body">

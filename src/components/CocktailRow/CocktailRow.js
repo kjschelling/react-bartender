@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 
 
-const CocktailRow = ({strDrink, strDrinkThumb, idDrink}) => {
+const CocktailRow = ({strDrink, strDrinkThumb, idDrink, strCategory}) => {
 
   const imgSrc = `${strDrinkThumb}/preview`;
 
@@ -15,6 +15,7 @@ const CocktailRow = ({strDrink, strDrinkThumb, idDrink}) => {
             <img className="card-img-top" src={imgSrc} alt='Cocktail Pic' />
             <div className="card-body">
               <h5 className="card-title">
+              <h6 className="card-subtitle mb-2 text-muted">Category:{strCategory}</h6>
                 <Link to={`/cocktails/${idDrink}`}>{strDrink}</Link>
               </h5>
             </div>

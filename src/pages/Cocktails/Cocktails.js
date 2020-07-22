@@ -1,10 +1,12 @@
 
 import React, { Component} from 'react';
+import styles from './Cocktails.module.css';
 
 import CocktailRow from '../../components/CocktailRow/CocktailRow';
 import CocktailsDB from '../../services/CocktailsDB';
 import RandomCocktail from '../../components/RandomCocktail/RandomCocktail';
-// import RandomCocktail from '../../components/RandomCocktail/RandomCocktail';
+import Greeting from '../../components/Greeting/Greeting';
+
 
 class Cocktails extends Component {
 
@@ -18,12 +20,6 @@ class Cocktails extends Component {
       const data = await CocktailsDB.index();
        this.setState({drinks: data.drinks});
     }
-
-    // async componentDidMount() {
-  
-    //   const data = await CocktailsDB.randomCocktail();
-    //    this.setState({random: data.drinks});
-    // }
   
     render() {
 
@@ -33,9 +29,12 @@ class Cocktails extends Component {
 
     return (
       <>
+      <Greeting />
         <section className="jumbotron">
           <div className="container">
-            <h1 className="display-4">Cocktails</h1>
+            <h1 
+            className={styles.cocktailsH1}
+             >Cocktails</h1>
           </div>
         </section>
 

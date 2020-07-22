@@ -2,6 +2,7 @@ import React from 'react';
 import Cocktails from './pages/Cocktails/Cocktails';
 import Cocktail from './pages/Cocktail/Cocktail';
 import {Switch, Route, Link, Redirect} from 'react-router-dom';
+import Greeting from './components/Greeting/Greeting';
 // import NotFound from './pages/NotFound/NotFound';
 // import InternalServerError from './pages/InteralServerError/InteralServerError';
 // import Offline from './pages/Offline/Offline';
@@ -23,6 +24,7 @@ const App = () => {
           </nav>
           <main>
             <Switch>
+              
               <Route exact path="/" component={Cocktails}
                 render={ routeProps => <CocktailRow {...routeProps}/>} >
                   <Redirect to="/cocktails" />
@@ -36,7 +38,8 @@ const App = () => {
                 render={ routeProps => <Cocktail {...routeProps} />} 
                 />
                 <Route path="/cocktails" component={Cocktails} />
-            
+                <Route path="/cocktails" component={Greeting} />
+                
              </Switch>
           </main>
           </div>
