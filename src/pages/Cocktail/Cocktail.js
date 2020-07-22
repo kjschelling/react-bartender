@@ -17,13 +17,10 @@ class Cocktail extends Component {
 
     render () {
 
-        
+    
         const imgSrc = `${this.state.drink.strDrinkThumb}/preview`;
-        // const IngredList = ({strIngredients}) => {
-        //     <ul>
-        //         {strIngredients.map((ingred, i) => <li key={i}>{ingred}</li>)}
-        //     </ul>
-        // }
+                    
+            
 
         return (
             <>
@@ -36,6 +33,12 @@ class Cocktail extends Component {
                     <h5 className="card-title">{this.state.drink.strDrink}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Category: {this.state.drink.strCategory}</h6>
                     <p className="card-text">{this.state.drink.strInstructions}</p>
+                    <div className="container">
+                        <ul>
+                           
+                        </ul>
+                    </div>
+                    
 
                 <Link className="btn btn-primary" to='/cocktails'>Back</Link>
         </div>
@@ -46,6 +49,7 @@ class Cocktail extends Component {
         );
     }
 }
+
     
 
 
