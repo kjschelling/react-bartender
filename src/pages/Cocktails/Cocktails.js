@@ -10,14 +10,8 @@ class Cocktails extends Component {
 
    state = {
        drinks: [],
-       random: {}
    }
 
-   activateRandom = (e) => {
-    e.preventDefault();
-    console.log("Random Cocktail button clicked!");
-    
-   }
 
   async componentDidMount() {
   
@@ -32,9 +26,10 @@ class Cocktails extends Component {
     // }
   
     render() {
+
+
         const allCocktailRows = this.state.drinks.map( d => <CocktailRow  key={d.idDrink} {...d} /> );
-      
-        // const RandomCocktail = <RandomCocktail />;
+        
 
     return (
       <>
@@ -43,11 +38,8 @@ class Cocktails extends Component {
             <h1 className="display-4">Cocktails</h1>
           </div>
         </section>
-        <div className="container" style={{"padding":"50px"}}>
-          <h3 className="display-6">Generate Random Cocktail</h3>
-          
-          <button type="button" class="btn btn-info" onClick={this.activateRandom} >Random Cocktail!</button>
-        </div>
+
+        <RandomCocktail />
 
         { this.state.drinks.length ? 
           <div className="album">

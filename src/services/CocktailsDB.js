@@ -21,15 +21,15 @@ const index = () => {
    }
    
    const randomShow = () => {
-        return fetch(randomShow)
+        return fetch(randomShowUrl)
         .then(response => response.json());
    }
-   
+
    const CocktailsDB = {
      index,
      show,
      apiKey, 
-     randomShow
+     randomShowUrl
    };
    
    export default CocktailsDB;
