@@ -16,10 +16,6 @@ const index = () => {
         .then(response => response.json());
    }
    
-   const randomShow = () => {
-        return fetch(randomShowUrl)
-        .then(response => response.json());
-   }
 
    const CocktailsDB = {
      index,

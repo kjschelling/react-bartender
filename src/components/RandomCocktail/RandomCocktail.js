@@ -20,31 +20,26 @@ class RandomCocktail extends Component {
                 this.setState({random: data.drinks[0]});
              });
             }
-               
 
         const imgSrc = `${this.state.random.strDrinkThumb}/preview` ;
 
     return (
-        <div className='container' className={styles.randomDivWrapper}>
-            <div className='jumbotron-fluid'>
-                <h3 className={styles.randomH3}>Show Random Cocktail</h3>
-            </div>
+        <div className={styles.randomDivWrapper}>
             
-        <div className="col-md-4"> 
-          <div className="card mb-4 shadow-sm" 
-          style= {{"padding":"20px"}}>
-              <h6 className="card-subtitle mb-2 text-muted" defaultValue="ID"> ID:{this.state.random.idDrink}</h6>
-            <img className="card-img-top" src={imgSrc} defaultValue="icon dice-6"  alt='Cocktail Pic'
+      
+          
+              <h6 className=" text-muted" defaultValue="ID"> ID:{this.state.random.idDrink}</h6>
+            <img className="" src={imgSrc}  alt='Cocktail Pic'
             style= {{"padding":"15px" }} />
-            <div className="card-body">
-              <h5 className="card-title" defaultValue="Cocktail Name">
-                 Name: {this.state.random.strDrink}
+            <div className="body">
+              <h5 className="" defaultValue="Cocktail Name">
+                 {this.state.random.strDrink}
               </h5>
               <p>{this.state.random.strInstructions}</p>
-            </div>
+          
           </div>
-        </div>
-        <button type="button" className="btn btn-info" onClick={fetchRandomCockTail}> Get random cocktail!</button>
+       
+        <button type="button" className="btn btn-info" onClick={fetchRandomCockTail}>RANDOM COCKTAIL</button>
         </div>
     );
     }

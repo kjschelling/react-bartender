@@ -1,7 +1,7 @@
 import React from 'react';
 import Cocktails from './pages/Cocktails/Cocktails';
 import Cocktail from './pages/Cocktail/Cocktail';
-import {Switch, Route, Link, Redirect} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import Greeting from './components/Greeting/Greeting';
 // import NotFound from './pages/NotFound/NotFound';
 // import InternalServerError from './pages/InteralServerError/InteralServerError';
@@ -18,7 +18,7 @@ const App = () => {
 
       <div className="App">
           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-          <Link to='/' className="navbar-brand" to='/'> Quarantine Drink Inspiration</Link>
+          <Link to='/' className="navbar-brand" > Quarantine Drink Inspiration</Link>
           </nav>
           <main>
             <Switch>
